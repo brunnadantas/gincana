@@ -5,7 +5,7 @@
 int main(){
     
     int opt;
-    //int Joâo = 0, Pedro = 0, Miguel = 0;
+    //int Joao = 0, Pedro = 0, Miguel = 0;
     //int Maria = 0, Julia = 0, Bruna = 0;
     int qtd;
 
@@ -42,8 +42,20 @@ int main(){
             printf("  sera coroado o GRANDE VENCEDOR da nossa festa junina! \n\n");
             break;
 
-            case 2: {
+            case 2:{
+                int candidato;
+
             printf("\n\n COMPRAR CARTELA \n\n");
+            printf("Escolha o candidato:\n");
+            printf("[1] Joao\n");
+            printf("[2] Pedro\n");
+            printf("[3] Miguel\n");
+            printf("[4] Maria\n");
+            printf("[5] Julia\n");
+            printf("[6] Bruna\n");
+            printf('Escolha uma opcao:');
+            scanf('%d', &candidato);    
+
             printf("Quantas cartelas voce deseja comprar? ");
             scanf("%d", &qtd);
             }
