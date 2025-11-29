@@ -80,7 +80,7 @@ int main(){
                 printf("4 - Maria\n");
                 printf("5 - Julia\n");
                 printf("6 - Bruna\n");
-                printf("Digite o numero do canditado escolhido:");
+                printf("Digite o numero do canditado escolhido: ");
                 scanf(" %d", &voto);
 
             printf("Quantas cartelas voce deseja comprar? ");
@@ -121,9 +121,8 @@ int main(){
             int maiorS = Maria;
             if (Julia > maiorS) maiorS = Julia;
             if (Bruna > maiorS) maiorS = Bruna;
-            printf("\nGanhadores:\n");
 
-            printf("\nGANHADORES\n");
+            printf("\nGanhadores:\n");
             printf("\nXERIFE:\n ");
             if (Joao== maiorX) printf("Joao com %d votos!\n", maiorX);
             if (Pedro== maiorX) printf("Pedro com %d votos!\n", maiorX);
