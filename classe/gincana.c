@@ -1,16 +1,16 @@
 #include <stdio.h>
-#include <string.h>
-#include <locale.h>
+#include <stdlib.h>
+
 
 int main(){
     
     int opt;
+    // Votos - meninos (xerife)
     int Joao = 0, Pedro = 0, Leandro = 0;
+    // Votos - meninas (sinhazinha)
     int Maria = 0, Julia = 0, Bruna = 0;
-    int grupo1[] = {Joao, Pedro, Leandro};
-    int grupo2[] = {Maria, Julia, Bruna};
-    int qtd;
-    int candidato;
+    int qtd; 
+    int voto;
 
     while (1)
     {
@@ -28,7 +28,6 @@ int main(){
         }
 
         switch (opt) {
-
             case 1:
             printf("\n\n EXPLICACAO DA GINCANA \n\n");
             printf("E ai, pessoal! Preparem os chapeus e os vestidos de chita! \n");
@@ -44,41 +43,105 @@ int main(){
             printf("- O candidato (ou dupla) que acumular a maior quantidade de cartelas vendidas ate o dia da apuracao\n");
             printf("  sera coroado o GRANDE VENCEDOR da nossa festa junina! \n\n");
             break;
+        
+            case 2:{
+                int categoria;
 
-            case 2:
+            printf("\n == Categoria ==\n");
+            printf("[1] Votar no XERIFE (meninos)\n");
+            printf("[2] Votar na SINHAZINHA (meninas)\n");
+            printf("Escolha a categoria:");
+            scanf(" %d", &categoria);
 
-             printf("\n\n COMPRAR CARTELA \n\n");
-             printf("Escolha o candidato:\n");
-             printf("[1] Joao\n");
-             printf("[2] Pedro\n");
-             printf("[3] Leandro\n");
-             printf("[4] Maria\n");
-             printf("[5] Julia\n");
-             printf("[6] Bruna\n");
-             printf("Escolha um candidato: ");
-             scanf("%d", &candidato);
-             
-             printf("Quantas cartelas voce deseja comprar? ");
-             scanf("%d", &qtd);
+            if (categoria != 1 && categoria !=2){
+                printf("Categoria invalida. Tente novamente.\n");
+                break;
+            }
+            if (categoria == 1){
+                printf("\n\n Candidatos a xerife \n\n");
+                printf("1 - Joao\n");
+                printf("2 - Pedro\n");
+                printf("3 - Leandro\n");
+                printf("Digite o numero do candidato escolhido: ");
+                scanf(" %d", &voto);
 
-             if(qtd > 0){
-              printf("Voce comprou %d cartela(s) com sucesso!\n", qtd);
+            printf("Quantas cartelas voce deseja comprar? ");
+            scanf("%d", &qtd);
 
-             switch (candidato){
-             case 1: Joao += qtd; break;
-             case 2: Pedro += qtd; break;
-             case 3: Leandro += qtd; break;
-             case 4: Maria += qtd; break;
-             case 5: Julia += qtd; break;
-             case 6: Bruna += qtd; break;
-             default: printf("Candidato invalido!\n");
+            switch (voto){
+                case 1: Joao += qtd; break;
+                case 2: Pedro += qtd; break;
+                case 3: Leandro += qtd; break;
+                default:(printf("Inválido!\n"));
             }
             }
+            else if(categoria == 2){
+                printf("\n\n Candidatos a sinhazinha\n\n");
+                printf("4 - Maria\n");
+                printf("5 - Julia\n");
+                printf("6 - Bruna\n");
+                printf("Digite o numero do canditado escolhido: ");
+                scanf(" %d", &voto);
+
+            printf("Quantas cartelas voce deseja comprar? ");
+            scanf("%d", &qtd);
+
+            switch (voto){
+                case 4: Maria += qtd; break;
+                case 5: Julia += qtd; break;
+                case 6: Bruna += qtd; break;
+                default:
+                    printf("Invalido!\n");
+            }
+        }
+            else {
+                printf("Categoria invalida. Tente novamente.\n");
+            }
+            printf("Voto registrado!\n");
             break;
 
             case 3:
+            printf("\n RESULTADOS  \n");
 
+            printf("\n--XERIFE (meninos)--\n");
+            printf("Joao: %d votos\n", Joao);
+            printf("Pedro: %d votos\n", Pedro);
+            printf("Miguel: %d votos\n", Leandro);
+
+            printf("\n--SINHAZINHA (meninas)--\n");
+            printf("Maria: %d votos\n", Maria);
+            printf("Julia: %d votos\n", Julia);
+            printf("Bruna: %d votos\n", Bruna);
+
+            int maiorX = Joao;
+    
+            if (Pedro > maiorX) maiorX = Pedro;
+            if (Leandro > maiorX) maiorX = Leandro;
+
+            int maiorS = Maria;
+            if (Julia > maiorS) maiorS = Julia;
+            if (Bruna > maiorS) maiorS = Bruna;
+
+            printf("\nGanhadores:\n");
+            printf("\nXERIFE:\n ");
+            if (Joao== maiorX) printf("Joao com %d votos!\n", maiorX);
+            if (Pedro== maiorX) printf("Pedro com %d votos!\n", maiorX);
+            if (Leandro== maiorX) printf("Leandro com %d votos!\n", maiorX);
+
+            printf("\nSINHAZINHA:\n ");
+            if (Maria== maiorS) printf("Maria com %d votos!\n", maiorS);
+            if (Julia== maiorS) printf("Julia com %d votos!\n", maiorS);
+            if (Bruna== maiorS) printf("Bruna com %d votos!\n", maiorS);
+            break;
+
+            case 0: 
+            printf("Encerrando o programa...\n");
+            exit(0);
+
+            default:
+            printf("Opcao invalida.\n");
+            }
+        }
     }
-}
-return 0; 
+    return 0;
 }
