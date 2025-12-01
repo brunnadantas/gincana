@@ -6,7 +6,7 @@ int main(){
     
     int opt;
     // Votos - meninos (xerife)
-    int Joao = 0, Pedro = 0, Miguel = 0;
+    int Joao = 0, Pedro = 0, Leandro = 0;
     // Votos - meninas (sinhazinha)
     int Maria = 0, Julia = 0, Bruna = 0;
     int qtd; 
@@ -61,7 +61,7 @@ int main(){
                 printf("\n\n Candidatos a xerife \n\n");
                 printf("1 - Joao\n");
                 printf("2 - Pedro\n");
-                printf("3 - Miguel\n");
+                printf("3 - Leandro\n");
                 printf("Digite o numero do candidato escolhido: ");
                 scanf(" %d", &voto);
 
@@ -71,7 +71,7 @@ int main(){
             switch (voto){
                 case 1: Joao += qtd; break;
                 case 2: Pedro += qtd; break;
-                case 3: Miguel += qtd; break;
+                case 3: Leandro += qtd; break;
                 default:(printf("Inválido!\n"));
             }
             }
@@ -106,7 +106,7 @@ int main(){
             printf("\n--XERIFE (meninos)--\n");
             printf("Joao: %d votos\n", Joao);
             printf("Pedro: %d votos\n", Pedro);
-            printf("Miguel: %d votos\n", Miguel);
+            printf("Miguel: %d votos\n", Leandro);
 
             printf("\n--SINHAZINHA (meninas)--\n");
             printf("Maria: %d votos\n", Maria);
@@ -116,7 +116,7 @@ int main(){
             int maiorX = Joao;
     
             if (Pedro > maiorX) maiorX = Pedro;
-            if (Miguel > maiorX) maiorX = Miguel;
+            if (Leandro > maiorX) maiorX = Leandro;
 
             int maiorS = Maria;
             if (Julia > maiorS) maiorS = Julia;
@@ -126,7 +126,7 @@ int main(){
             printf("\nXERIFE:\n ");
             if (Joao== maiorX) printf("Joao com %d votos!\n", maiorX);
             if (Pedro== maiorX) printf("Pedro com %d votos!\n", maiorX);
-            if (Miguel== maiorX) printf("Miguel com %d votos!\n", maiorX);
+            if (Leandro== maiorX) printf("Leandro com %d votos!\n", maiorX);
 
             printf("\nSINHAZINHA:\n ");
             if (Maria== maiorS) printf("Maria com %d votos!\n", maiorS);
