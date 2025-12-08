@@ -12,6 +12,7 @@ int main(){
     int qtd; 
     int voto;
 
+    //Menu de áreas
     while (1)
     {
         printf("\nMENU\n");
@@ -27,6 +28,7 @@ int main(){
             break;
         }
 
+        // Área de exploração da gincana
         switch (opt) {
             case 1:
             printf("\n\n EXPLICACAO DA GINCANA \n\n");
@@ -44,6 +46,7 @@ int main(){
             printf("  sera coroado o GRANDE VENCEDOR da nossa festa junina! \n\n");
             break;
         
+            //Área de compra de cartelas 
             case 2:{
                 int categoria;
 
@@ -100,6 +103,7 @@ int main(){
             printf("Voto registrado!\n");
             break;
 
+            //Área feita para mostrar os ganhadores
             case 3:
             printf("\n RESULTADOS  \n");
 
